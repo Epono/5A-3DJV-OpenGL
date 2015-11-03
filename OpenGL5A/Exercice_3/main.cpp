@@ -84,7 +84,7 @@ bool Initialise() {
 	glBindVertexArray(g_Object.VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, g_Object.VBO);
 	glEnableVertexAttribArray(0);
-	// glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr); 
+	// glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr);
 	// tres important ! toujours desactiver les VAO lorsque l’on ne s’en sert plus 
 	glBindVertexArray(0);
 
@@ -157,7 +157,7 @@ void Render() {
 	GLint offsetLocation = glGetUniformLocation(basicProgram, "u_offset");
 
 	// zero correspond ici a la valeur de layout(location=0) dans le shader basic.vs
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, nullptr);
 	glEnableVertexAttribArray(0);
 
 	//rand() % 10 - 4.5
