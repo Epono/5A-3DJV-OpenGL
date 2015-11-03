@@ -11,10 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{78D5C001-0B1F-4DC0-ACEE-75A00C96CBAB}</ProjectGuid>
+    <ProjectGuid>{A24DE703-D732-48C5-A0B5-6D0ECDF746BE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Exercice_3</RootNamespace>
-    <ProjectName>Exercice_3</ProjectName>
+    <RootNamespace>Exercice_2_UBO_VAO</RootNamespace>
+    <ProjectName>Exercice_2_UBO_VAO</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -53,7 +53,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Libs\stb;$(SolutionDir)\Libs\freeglut\include;$(SolutionDir)\Libs\glew-1.13.0\include;$(SolutionDir)\Libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Libs\freeglut\include;$(SolutionDir)\Libs\glew-1.13.0\include;$(SolutionDir)\Libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -70,7 +70,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Libs\stb;$(SolutionDir)\Libs\freeglut\include;$(SolutionDir)\Libs\glew-1.13.0\include;$(SolutionDir)\Libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Libs\freeglut\include;$(SolutionDir)\Libs\glew-1.13.0\include;$(SolutionDir)\Libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

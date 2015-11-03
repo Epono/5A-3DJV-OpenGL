@@ -1,11 +1,12 @@
 #version 330
 
-in vec4 v_color;
+uniform sampler2D u_texture;
+in vec3 v_texCoords;
 
 out vec4 Fragment;
 
 void main(void)
 {
-    Fragment = v_color;
-    //Fragment = vec4(1.0, 0.0, 0.0, 0.0);
+    //Fragment = vec4(1.0, 1.0, 1.0, 0.0);
+    Fragment = texture(u_texture, v_texCoords.xy);
 }

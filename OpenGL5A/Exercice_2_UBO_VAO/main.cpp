@@ -25,12 +25,6 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 
-#define STB_IMAGE_IMPLEMENTATION 
-#include "stb_image.h"
-
-
-bool LoadAndCreateTextureRGBA(const char *filename, GLuint &texID);
-
 struct Camera {
 	glm::mat4 viewMatrix;
 	glm::mat4 projectionMatrix;
@@ -42,7 +36,6 @@ struct Objet {
 	GLuint VBO;
 	//GLuint EBO;
 	GLuint VAO;
-	GLuint textureId;
 } g_Object;
 
 EsgiShader g_BasicShader;
@@ -69,16 +62,15 @@ bool Initialise() {
 	auto basicProgram = g_BasicShader.GetProgram();
 	glUseProgram(basicProgram);
 
-	static const float quad[] = {
-		-0.4f, -0.4f,
-		0.4f, -0.4f,
-		0.4f, 0.4f,
-		-0.4f, 0.4f
+	static const float triangle[] = {
+		-0.5f, -0.5f,
+		0.5f, -0.5f,
+		0.0f, 0.5f
 	};
 
 	glGenBuffers(1, &g_Object.VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, g_Object.VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(quad), quad, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	//static const unsigned short indexesTriangle[] = {0, 1, 2};
@@ -109,11 +101,6 @@ bool Initialise() {
 	auto blockIndex = glGetUniformBlockIndex(basicProgram, "ViewProj");
 	glUniformBlockBinding(basicProgram, blockIndex, bindingPoint);
 
-	bool result = LoadAndCreateTextureRGBA("../Resources/texture.jpg", g_Object.textureId);
-	if(!result) {
-		exit(-1);
-	}
-
 	glUseProgram(0);
 
 #ifdef _WIN32
@@ -128,7 +115,6 @@ void Terminate() {
 	glDeleteBuffers(1, &g_Object.VBO);
 	//glDeleteBuffers(1, &g_Object.EBO);
 	glDeleteVertexArrays(1, &g_Object.VAO);
-	glDeleteTextures(1, &g_Object.textureId);
 }
 
 void Resize(GLint width, GLint height) {
@@ -156,7 +142,7 @@ void Render() {
 	g_Object.worldMatrix = glm::mat4(1.0f);
 
 	g_Camera.projectionMatrix = glm::perspectiveFov(45.f, (float) glutGet(GLUT_WINDOW_WIDTH), (float) glutGet(GLUT_WINDOW_HEIGHT), 0.1f, 1000.f);
-	glm::vec4 position = glm::vec4(0.0f, 0.0f, -2.0f, 1.0f);
+	glm::vec4 position = glm::vec4(0.0f, 0.0f, -5.0f, 1.0f);
 	g_Camera.viewMatrix = glm::lookAt(glm::vec3(position), glm::vec3(0.f), glm::vec3(0.f, 1.f, 0.f));
 
 	glBindBuffer(GL_UNIFORM_BUFFER, g_Camera.UBO);
@@ -167,16 +153,20 @@ void Render() {
 	auto worldLocation = glGetUniformLocation(basicProgram, "u_worldMatrix");
 	glUniformMatrix4fv(worldLocation, 1, GL_FALSE, glm::value_ptr(g_Object.worldMatrix));
 
+	GLint colorLocation = glGetUniformLocation(basicProgram, "u_color");
+	GLint offsetLocation = glGetUniformLocation(basicProgram, "u_offset");
+
 	// zero correspond ici a la valeur de layout(location=0) dans le shader basic.vs
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, nullptr);
 	glEnableVertexAttribArray(0);
 
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, g_Object.textureId);
-	auto textureLocation = glGetUniformLocation(basicProgram, "u_texture");
-	glUniform1i(textureLocation, 0);
+	//rand() % 10 - 4.5
+	for(int i = 0; i < 10; ++i) {
+		glUniform3f(offsetLocation, i - 4.5, 0.0f, 0.0f);
+		glUniform4f(colorLocation, 0.0f, 0.0f, (float) i / 10, 0.0f);
 
-	glDrawArrays(GL_QUADS, 0, 4);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+	}
 
 	glBindVertexArray(0);
 	glutSwapBuffers();
@@ -203,25 +193,4 @@ int main(int argc, char *argv[]) {
 	Terminate();
 
 	return 1;
-}
-
-bool LoadAndCreateTextureRGBA(const char *filename, GLuint &texID) {
-	glGenTextures(1, &texID);
-	glBindTexture(GL_TEXTURE_2D, texID);
-
-	// il est obligatoire de specifier une valeur pour GL_TEXTURE_MIN_FILTER 
-	// autrement le Texture Object est considere comme invalide 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-	int w, h;
-	uint8_t *data = stbi_load(filename, &w, &h, nullptr, STBI_rgb_alpha);
-	if(data) {
-		// TODO: eventuellement passer en glTexStorage2D
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		stbi_image_free(data);
-	}
-	return (data != nullptr);
 }

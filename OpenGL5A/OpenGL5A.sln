@@ -13,7 +13,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercice_2_VBO", "Exercice_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercice_2_EBO", "Exercice_2_EBO\Exercice_2_EBO.vcxproj", "{7D339289-CCA9-4B7D-8C97-3CFFCB73F608}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercice_3", "Exercice_3\Exercice_3.vcxproj", "{A24DE703-D732-48C5-A0B5-6D0ECDF746BE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercice_2_UBO_VAO", "Exercice_2_UBO_VAO\Exercice_2_UBO_VAO.vcxproj", "{A24DE703-D732-48C5-A0B5-6D0ECDF746BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercice_3", "Exercice_3\Exercice_3.vcxproj", "{78D5C001-0B1F-4DC0-ACEE-75A00C96CBAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A24DE703-D732-48C5-A0B5-6D0ECDF746BE}.Debug|Win32.Build.0 = Debug|Win32
 		{A24DE703-D732-48C5-A0B5-6D0ECDF746BE}.Release|Win32.ActiveCfg = Release|Win32
 		{A24DE703-D732-48C5-A0B5-6D0ECDF746BE}.Release|Win32.Build.0 = Release|Win32
+		{78D5C001-0B1F-4DC0-ACEE-75A00C96CBAB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{78D5C001-0B1F-4DC0-ACEE-75A00C96CBAB}.Debug|Win32.Build.0 = Debug|Win32
+		{78D5C001-0B1F-4DC0-ACEE-75A00C96CBAB}.Release|Win32.ActiveCfg = Release|Win32
+		{78D5C001-0B1F-4DC0-ACEE-75A00C96CBAB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
