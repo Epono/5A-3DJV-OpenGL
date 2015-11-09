@@ -61,6 +61,8 @@ struct Objet {
 	GLuint VAO;
 	// material
 	GLuint textureObj;
+	// normals
+	GLuint normals;
 } g_Cube;
 
 void Keyboard(unsigned char key, int x, int y) {
@@ -111,18 +113,18 @@ void InitCube() {
 	// CODE A AJOUTER ICI POUR CHARGER LES INDICES ET ATTRIBUTS
 	glGenBuffers(1, &g_Cube.VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, g_Cube.VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * positions.size(), &positions, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * positions.size(), &positions[0], GL_STATIC_DRAW);
 	//GLvoid* vertexPointer = glMapBuffer(GL_ARRAY_BUFFER, GL_READ_WRITE);
 	//glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(float) * 5, vertexPointer);
 	//glUnmapBuffer(GL_ARRAY_BUFFER);
-	GLvoid* PositionBuffer = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-	memcpy(PositionBuffer, &positions, positions.size());
-	glUnmapBuffer(GL_ARRAY_BUFFER);
+	//GLvoid* PositionBuffer = glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+	//memcpy(PositionBuffer, &positions, positions.size());
+	//glUnmapBuffer(GL_ARRAY_BUFFER);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glGenBuffers(1, &g_Cube.IBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, g_Cube.IBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * indices.size(), &indices, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * indices.size(), &indices[0], GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	glGenVertexArrays(1, &g_Cube.VAO);
@@ -130,6 +132,10 @@ void InitCube() {
 	glBindBuffer(GL_ARRAY_BUFFER, g_Cube.VBO);
 	glBindVertexArray(0);
 
+	glGenBuffers(1, &g_Cube.normals);
+	glBindBuffer(GL_ARRAY_BUFFER, g_Cube.normals);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * normals.size(), &normals[0], GL_STATIC_DRAW);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 
 	glBindVertexArray(0);
@@ -247,6 +253,7 @@ void Render() {
 	// IL FAUT TRANSFERER LES MATRICES VIEW ET PROJ AU SHADER
 	glBindBuffer(GL_UNIFORM_BUFFER, g_Camera.UBO);
 	glBufferData(GL_UNIFORM_BUFFER, sizeof(glm::mat4) * 2, glm::value_ptr(g_Camera.viewMatrix), GL_STREAM_DRAW);
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 	float yaw = glm::radians(g_Cube.rotation.y);
 	float pitch = glm::radians(g_Cube.rotation.x);
@@ -263,6 +270,17 @@ void Render() {
 	//glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(float) * 5, nullptr);
 	//glUnmapBuffer(GL_ARRAY_BUFFER);
 	//
+
+	// TODO : passer en glMapBuffer()
+	glBindBuffer(GL_ARRAY_BUFFER, g_Cube.VBO);
+	auto positionLocation = glGetAttribLocation(program, "a_position");
+	glEnableVertexAttribArray(positionLocation);
+	glVertexAttribPointer(positionLocation, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, 0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, g_Cube.normals);
+	auto normalLocation = glGetAttribLocation(program, "a_normal");
+	glEnableVertexAttribArray(normalLocation);
+	glVertexAttribPointer(normalLocation, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, 0);
 
 	glBindVertexArray(g_Cube.VAO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, g_Cube.IBO);

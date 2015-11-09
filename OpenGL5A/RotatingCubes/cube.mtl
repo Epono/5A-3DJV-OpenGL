@@ -1,46 +1,24 @@
-#
-#
-#
+newmtl white
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0
 
-newmtl back cube Mesh_white
-illum 2
-Ka 0.000000 0.000000 0.000000
-Kd 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
-Ns 0.000000
+newmtl red
+Ka 0 0 0
+Kd 1 0 0
+Ks 0 0 0
 
-newmtl bottom cube Mesh_white
-illum 2
-Ka 0.000000 0.000000 0.000000
-Kd 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
-Ns 0.000000
+newmtl green
+Ka 0 0 0
+Kd 0 1 0
+Ks 0 0 0
 
-newmtl front cube Mesh_white
-illum 2
-Ka 0.000000 0.000000 0.000000
-Kd 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
-Ns 0.000000
+newmtl blue
+Ka 0 0 0
+Kd 0 0 1
+Ks 0 0 0
 
-newmtl left cube Mesh_green
-illum 2
-Ka 0.000000 0.000000 0.000000
-Kd 0.000000 1.000000 0.000000
-Ks 0.000000 0.000000 0.000000
-Ns 0.000000
-
-newmtl right cube Mesh_red
-illum 2
-Ka 0.000000 0.000000 0.000000
-Kd 1.000000 0.000000 0.000000
-Ks 0.000000 0.000000 0.000000
-Ns 0.000000
-
-newmtl top cube Mesh_white
-illum 2
-Ka 0.000000 0.000000 0.000000
-Kd 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
-Ns 0.000000
-
+newmtl light
+Ka 20 20 20
+Kd 1 1 1
+Ks 0 0 0

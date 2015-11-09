@@ -14,6 +14,7 @@ void main(void)
 	// calcul du cosinus de l'angle entre les deux vecteurs
 	float NdotL = max(dot(normalize(v_normal), L), 0.0);
 	// Equation de Lambert : Intensite Reflechie = Intensite Incidente * N.L
-    //Fragment = u_objectColor * NdotL;
-    Fragment = vec4(0.5, 0.5, 0.5, 0.5);
+    Fragment = u_objectColor * NdotL;
+    //Fragment = u_objectColor * 1;
+    //Fragment = vec4(0.5, 0.5, 0.5, 0.5);
 }
