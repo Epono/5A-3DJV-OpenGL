@@ -322,9 +322,9 @@ void Render() {
 	glBindVertexArray(g_Cube.VAO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, g_Cube.IBO);
 
-	for(float x = -24.f; x < 24.f; x += 3.0f) {
-		for(float y = -24.f; y < 24.f; y += 3.0f) {
-			for(float z = -24.f; z < 24.f; z += 3.0f) {
+	for(float x = -24.f; x < 24.f; x += 24.0f) {
+		for(float y = -24.f; y < 24.f; y += 24.0f) {
+			for(float z = -24.f; z < 24.f; z += 24.0f) {
 				glUniform4f(colorLocation, (x + 24.0f) / 48.f, (y + 24.0f) / 48.f, (z + 24.0f) / 48.f, 1.0f);
 				//glm::mat4 transform = glm::translate(g_Cube.worldMatrix, glm::vec3(x, y, z));
 				glm::mat4& transform = g_Cube.worldMatrix;
