@@ -41,7 +41,7 @@ public:
 
 	inline unsigned int GetProgram() const	{ return m_ProgramObject; }
 
-	void SetPreLinkCallback(void (*callback)()) { m_PreLinkCallback = callback; }
+	void SetPreLinkCallback(void (*callback)(unsigned int)) { m_PreLinkCallback = callback; }
 
 private:
 	// handle du program object
@@ -51,7 +51,7 @@ private:
 	unsigned int m_FragmentShader;
 	unsigned int m_GeometryShader;
 	// callback appelee avant glLinkProgram()
-	void (*m_PreLinkCallback)();
+	void(*m_PreLinkCallback)(unsigned int);
 };
 
 #endif // ESGI_SHADER_H

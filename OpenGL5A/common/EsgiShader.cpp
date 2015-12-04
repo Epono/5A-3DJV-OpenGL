@@ -166,7 +166,7 @@ bool EsgiShader::Create()
 
 	// callback permettant d'effectuer des operations avant le linkage
 	if (m_PreLinkCallback) {
-		m_PreLinkCallback();
+		m_PreLinkCallback(m_ProgramObject);
 	}
 
 	// Liage des shaders dans le programme

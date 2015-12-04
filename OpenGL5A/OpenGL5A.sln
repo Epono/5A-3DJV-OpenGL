@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercice_5", "Exercice_5\Ex
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjLoader", "ObjLoader\ObjLoader.vcxproj", "{91E3A22E-97AA-4656-BF16-29D3BE5F54C6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParticleCollision", "ParticleCollision\ParticleCollision.vcxproj", "{28C72DF4-4212-4732-A023-3C4EA6F1563E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -69,6 +71,10 @@ Global
 		{91E3A22E-97AA-4656-BF16-29D3BE5F54C6}.Debug|Win32.Build.0 = Debug|Win32
 		{91E3A22E-97AA-4656-BF16-29D3BE5F54C6}.Release|Win32.ActiveCfg = Release|Win32
 		{91E3A22E-97AA-4656-BF16-29D3BE5F54C6}.Release|Win32.Build.0 = Release|Win32
+		{28C72DF4-4212-4732-A023-3C4EA6F1563E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{28C72DF4-4212-4732-A023-3C4EA6F1563E}.Debug|Win32.Build.0 = Debug|Win32
+		{28C72DF4-4212-4732-A023-3C4EA6F1563E}.Release|Win32.ActiveCfg = Release|Win32
+		{28C72DF4-4212-4732-A023-3C4EA6F1563E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
