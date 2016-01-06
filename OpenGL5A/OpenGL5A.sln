@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Triangle", "Triangle\Triangle.vcxproj", "{F45B78E7-EB5C-45F3-A3B1-387C9C6EEEB1}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjLoader", "ObjLoader\ObjLoader.vcxproj", "{91E3A22E-97AA-4656-BF16-29D3BE5F54C6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParticleCollision", "ParticleCollision\ParticleCollision.vcxproj", "{28C72DF4-4212-4732-A023-3C4EA6F1563E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiplePointLights", "MultiplePointLights\MultiplePointLights.vcxproj", "{2988DBD5-8F10-4CE5-B352-D9E163F7102E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiplePointLightsDefered", "MultiplePointLightsDefered\MultiplePointLightsDefered.vcxproj", "{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{28C72DF4-4212-4732-A023-3C4EA6F1563E}.Debug|Win32.Build.0 = Debug|Win32
 		{28C72DF4-4212-4732-A023-3C4EA6F1563E}.Release|Win32.ActiveCfg = Release|Win32
 		{28C72DF4-4212-4732-A023-3C4EA6F1563E}.Release|Win32.Build.0 = Release|Win32
+		{2988DBD5-8F10-4CE5-B352-D9E163F7102E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2988DBD5-8F10-4CE5-B352-D9E163F7102E}.Debug|Win32.Build.0 = Debug|Win32
+		{2988DBD5-8F10-4CE5-B352-D9E163F7102E}.Release|Win32.ActiveCfg = Release|Win32
+		{2988DBD5-8F10-4CE5-B352-D9E163F7102E}.Release|Win32.Build.0 = Release|Win32
+		{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}.Debug|Win32.Build.0 = Debug|Win32
+		{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}.Release|Win32.ActiveCfg = Release|Win32
+		{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
