@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{81249167-1a38-4c10-bf97-286acdc53479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tiny_obj_loader">
+      <UniqueIdentifier>{f1256b14-6c42-47ea-b4a0-59e06fc285cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{38bc961f-beb2-4db0-be13-446c23aa8104}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\SinglePass">
+      <UniqueIdentifier>{92102a41-ba66-44b8-b9b8-baed7d4eca7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\MultiPass">
+      <UniqueIdentifier>{dd1b4d23-9659-41e6-b33a-79ac53a15b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\DeferredFat">
+      <UniqueIdentifier>{2465a418-535f-42c4-82a7-2da59480f057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Deferred">
+      <UniqueIdentifier>{1cbc8c70-df6f-4bec-b4b5-2666541f42ee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\common\EsgiShader.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\tinyobjloader\tiny_obj_loader.cc">
+      <Filter>Source Files\tiny_obj_loader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\Common.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\dds.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplePointLightsDeferredFinal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\common\EsgiShader.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\tinyobjloader\tiny_obj_loader.h">
+      <Filter>Source Files\tiny_obj_loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Common.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\dds.h">
+      <Filter>Source Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="GBuffer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ambient.fs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="ambient.vs">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="gbuffer.vs">
+      <Filter>Shaders\Deferred</Filter>
+    </None>
+    <None Include="gbuffer.fs">
+      <Filter>Shaders\Deferred</Filter>
+    </None>
+    <None Include="blinnphong_DeferredFat.fs">
+      <Filter>Shaders\DeferredFat</Filter>
+    </None>
+    <None Include="blinnphong_DeferredFat.vs">
+      <Filter>Shaders\DeferredFat</Filter>
+    </None>
+    <None Include="blinnphong_SinglePass.fs">
+      <Filter>Shaders\SinglePass</Filter>
+    </None>
+    <None Include="blinnphong_SinglePass.vs">
+      <Filter>Shaders\SinglePass</Filter>
+    </None>
+    <None Include="blinnphong_MultiPass.fs">
+      <Filter>Shaders\MultiPass</Filter>
+    </None>
+    <None Include="blinnphong_MultiPass.vs">
+      <Filter>Shaders\MultiPass</Filter>
+    </None>
+    <None Include="blinnphong_Deferred.fs">
+      <Filter>Shaders\Deferred</Filter>
+    </None>
+    <None Include="blinnphong_Deferred.vs">
+      <Filter>Shaders\Deferred</Filter>
+    </None>
+    <None Include="gbufferFat.fs">
+      <Filter>Shaders\DeferredFat</Filter>
+    </None>
+    <None Include="gbufferFat.vs">
+      <Filter>Shaders\DeferredFat</Filter>
+    </None>
+  </ItemGroup>
+</Project>

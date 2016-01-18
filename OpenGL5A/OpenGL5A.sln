@@ -29,6 +29,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiplePointLights", "Mult
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiplePointLightsDefered", "MultiplePointLightsDefered\MultiplePointLightsDefered.vcxproj", "{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiplePointLightsDeferredFinal", "MultiplePointLightsDeferredFinal\MultiplePointLightsDeferredFinal.vcxproj", "{2A5CB96D-5A39-4102-8D58-B81201C1A781}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ObjLoaderEnvMap", "ObjLoaderEnvMap\ObjLoaderEnvMap.vcxproj", "{5535882C-C785-4D19-A928-6E5DA4441CB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -87,6 +91,14 @@ Global
 		{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}.Debug|Win32.Build.0 = Debug|Win32
 		{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}.Release|Win32.ActiveCfg = Release|Win32
 		{3A2F112A-3FD4-4F8B-B0AE-8F1E77157742}.Release|Win32.Build.0 = Release|Win32
+		{2A5CB96D-5A39-4102-8D58-B81201C1A781}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2A5CB96D-5A39-4102-8D58-B81201C1A781}.Debug|Win32.Build.0 = Debug|Win32
+		{2A5CB96D-5A39-4102-8D58-B81201C1A781}.Release|Win32.ActiveCfg = Release|Win32
+		{2A5CB96D-5A39-4102-8D58-B81201C1A781}.Release|Win32.Build.0 = Release|Win32
+		{5535882C-C785-4D19-A928-6E5DA4441CB4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5535882C-C785-4D19-A928-6E5DA4441CB4}.Debug|Win32.Build.0 = Debug|Win32
+		{5535882C-C785-4D19-A928-6E5DA4441CB4}.Release|Win32.ActiveCfg = Release|Win32
+		{5535882C-C785-4D19-A928-6E5DA4441CB4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
